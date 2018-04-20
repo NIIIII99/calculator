@@ -32,7 +32,7 @@ public class CacheConfig extends CachingConfigurerSupport {
     }
 
     @Bean
-    public CacheManager cacheManager(RedisTemplate redisTemplate) {
-        return new RedisCacheManager(redisTemplate);
+    public CacheManager cacheManager(RedisConnectionFactory redisConnectionFactory) {
+        return RedisCacheManager.create(redisConnectionFactory);
     }
 }
