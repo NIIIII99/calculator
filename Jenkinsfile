@@ -16,6 +16,11 @@ pipeline {
         bat 'docker build -t han/calculator -f dockerfile . '
         //sh "docker build -t com/calculator ."
       }
-    }     
+    }
+    stage(''){
+      steps {
+        bat 'docker push localhost:8888/han/calculator'
+      }
+    }
   }
 }
