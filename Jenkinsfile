@@ -11,5 +11,11 @@ pipeline {
         bat(script: 'gradlew.bat build', returnStatus: true, returnStdout: true)
       }
     }
+    stage('Docker Build') { 
+      steps {
+        bat 'docker build -t han/calculator -f dockerfile . '
+        //sh "docker build -t com/calculator ."
+      }
+    }     
   }
 }
