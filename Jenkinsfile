@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Docker Build') { 
       steps {
-        bat 'docker build -t han/calculator -f dockerfile . '
+        bat 'docker build -t han_calculator -f dockerfile . '
         //sh "docker build -t com/calculator ."
       }
     }
