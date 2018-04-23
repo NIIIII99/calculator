@@ -17,8 +17,9 @@ pipeline {
         //sh "docker build -t com/calculator ."
       }
     }
-    stage(''){
+    stage('Docker Image registry'){
       steps {
+        bat 'docker tag han_calculator:latest localhost:5000/han_calculator:latest
         bat 'docker push localhost:8888/han/calculator'
       }
     }
